@@ -13,17 +13,17 @@ class Board:
         for r in range(8):
             row = []
             if r == 0:
-                row = [Piece('R', 'W'), Piece('N', 'W'), Piece('B', 'W'), Piece('K', 'W'),
-                        Piece('Q', 'W'), Piece('B', 'W'), Piece('N', 'W'), Piece('R', 'W')]
+                row = [Piece('R', 'W', r, 0), Piece('N', 'W', r, 1), Piece('B', 'W', r, 2), Piece('K', 'W', r, 3),
+                       Piece('Q', 'W', r, 4), Piece('B', 'W', r, 5), Piece('N', 'W', r, 6), Piece('R', 'W', r, 7)]
             elif r == 1:
-                row = [Piece('P', 'W'), Piece('P', 'W'), Piece('P', 'W'), Piece('P', 'W'),
-                        Piece('P', 'W'), Piece('P', 'W'), Piece('P', 'W'), Piece('P', 'W')]
+                row = [Piece('P', 'W', r, 0), Piece('P', 'W', r, 1), Piece('P', 'W', r, 2), Piece('P', 'W', r, 3),
+                       Piece('P', 'W', r, 4), Piece('P', 'W', r, 5), Piece('P', 'W', r, 6), Piece('P', 'W', r, 7)]
             elif r == 6:
-                row = [Piece('P', 'B'), Piece('P', 'B'), Piece('P', 'B'), Piece('P', 'B'),
-                        Piece('P', 'B'), Piece('P', 'B'), Piece('P', 'B'), Piece('P', 'B')]
+                row = [Piece('P', 'B', r, 0), Piece('P', 'B', r, 1), Piece('P', 'B', r, 2), Piece('P', 'B', r, 3),
+                       Piece('P', 'B', r, 4), Piece('P', 'B', r, 5), Piece('P', 'B', r, 6), Piece('P', 'B', r, 7)]
             elif r == 7:
-                row = [Piece('R', 'B'), Piece('N', 'B'), Piece('B', 'B'), Piece('K', 'B'),
-                        Piece('Q', 'B'), Piece('B', 'B'), Piece('N', 'B'), Piece('R', 'B')]
+                row = [Piece('R', 'B', r, 0), Piece('N', 'B', r, 1), Piece('B', 'B', r, 2), Piece('K', 'B', r, 3),
+                       Piece('Q', 'B', r, 4), Piece('B', 'B', r, 5), Piece('N', 'B', r, 6), Piece('R', 'B', r, 7)]
             else:
                 row = [None, None, None, None, None, None, None, None]
             self.board.append(row)
