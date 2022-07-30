@@ -1,3 +1,5 @@
+from re import L
+from typing import Type
 import pytest
 from app.piece import Piece
 
@@ -24,7 +26,15 @@ def test_valid_names() -> None:
             assert False, f'{name} raised a ValueError {exc}'
 
 
-def test_name_error() -> None:
+def test_name_type_error() -> None:
+    '''
+    Tests if non-string name raises proper TypeError
+    '''
+    with pytest.raises(TypeError):
+        sample_piece = Piece(False, 'W')
+
+
+def test_name_value_error() -> None:
     '''
     Tests if invalid name raises proper ValueError
     '''
@@ -43,7 +53,15 @@ def test_valid_sides() -> None:
             assert False, f'{side} raised a ValueError {exc}'
 
 
-def test_side_error() -> None:
+def test_side_type_error() -> None:
+    '''
+    Tests if non-string side raises proper TypeError
+    '''
+    with pytest.raises(TypeError):
+        sample_piece = Piece('P', False)
+
+
+def test_side_value_error() -> None:
     '''
     Tests if invalid side raises proper ValueError
     '''

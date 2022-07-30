@@ -19,6 +19,10 @@ class Piece:
         name: str -> letter representation of the piece
         side: str -> letter representation of the side the piece belongs to
         '''
+        if not isinstance(name, str):
+            raise TypeError('Piece name is not a string', name)
+        if not isinstance(side, str):
+            raise TypeError('Piece side is not a string', side)
         if name not in ACCEPTED_NAMES:
             raise ValueError('Nonvalid piece name', name)
         if side not in ACCEPTED_SIDES:
